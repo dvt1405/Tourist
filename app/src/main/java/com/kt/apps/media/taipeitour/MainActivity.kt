@@ -17,14 +17,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         get() = R.layout.activity_main
 
     override fun initView(savedInstanceState: Bundle?) {
-        Log.d("MainActivity", "initView: $savedInstanceState")
         if (savedInstanceState == null) {
             supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.main, MainFragment())
                 .commit()
         }
-        Log.d("MainActivity", "initView: ")
         mainViewModel.getALlTour()
     }
 

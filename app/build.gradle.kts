@@ -51,6 +51,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.swiperefreshlayout)
 
     implementation(platform(libs.okhttp.bom))
     implementation(libs.okhttp)
@@ -69,4 +70,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(project(":skeleton"))
 }

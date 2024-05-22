@@ -21,7 +21,7 @@ data class TourDTO(
     val email: String,
     val facebook: String,
     val fax: String,
-    val files: List<String>,
+    val files: List<File>,
     val friendly: List<Friendly>,
     val id: Int,
     val images: List<Image>,
@@ -82,3 +82,11 @@ data class Friendly(
     val name: String
 ) : Parcelable
 
+
+@Parcelize
+data class File(
+    val ext: String,
+    val src: String,
+    val subject: String,
+    val description: String
+) : Parcelable
