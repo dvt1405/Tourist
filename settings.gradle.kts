@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "TaipeiTour"
 include(":app")
+include(":skeleton")
