@@ -1,20 +1,33 @@
 package com.kt.apps.media.taipeitour
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import android.util.Log
+import androidx.activity.viewModels
+import com.kt.apps.media.taipeitour.base.BaseActivity
+import com.kt.apps.media.taipeitour.databinding.ActivityMainBinding
+import com.kt.apps.media.taipeitour.ui.MainFragment
+import com.kt.apps.media.taipeitour.ui.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+@AndroidEntryPoint
+class MainActivity : BaseActivity<ActivityMainBinding>() {
+
+    private val mainViewModel by viewModels<MainViewModel>()
+    override val layoutRes: Int
+        get() = R.layout.activity_main
+
+    override fun initView(savedInstanceState: Bundle?) {
+        Log.d("MainActivity", "initView: $savedInstanceState")
+        if (savedInstanceState == null) {
+            supportFragmentManager
+                .beginTransaction()
+                .replace(R.id.main, MainFragment())
+                .commit()
         }
+        Log.d("MainActivity", "initView: ")
+        mainViewModel.getALlTour()
+    }
+
+    override fun initAction(savedInstanceState: Bundle?) {
     }
 }
