@@ -26,6 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.kt.apps.media.taipeitour.utils.GlideModule"
+            android:value="com.bumptech.glide.module.AppGlideModule" />
     </application>
 
 </manifest>

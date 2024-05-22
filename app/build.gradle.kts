@@ -64,6 +64,7 @@ dependencies {
     kapt(libs.dagger.hilt.compiler)
 
     implementation(libs.glide)
+    kapt(libs.glide.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
