@@ -23,7 +23,8 @@ class MainAdapter() : BaseAdapter<TourDTO, ItemTourBinding>() {
                 .into(binding.itemLogo)
         } else {
             Glide.with(binding.root)
-                .load(com.kt.skeleton.R.drawable.gradient_first_corners)
+                .load(R.drawable.main_logo)
+                .centerInside()
                 .into(binding.itemLogo)
         }
 
