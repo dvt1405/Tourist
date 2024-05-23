@@ -1,5 +1,6 @@
 package com.kt.apps.media.taipeitour.ui.selectlanguage
 
+import com.kt.apps.media.taipeitour.Constants
 import com.kt.apps.media.taipeitour.R
 import com.kt.apps.media.taipeitour.base.BaseAdapter
 import com.kt.apps.media.taipeitour.databinding.ItemSelectLanguageBinding
@@ -10,7 +11,7 @@ class SelectLanguageAdapter() : BaseAdapter<String, ItemSelectLanguageBinding>()
         get() = R.layout.item_select_language
 
     override fun onBindItem(item: String, binding: ItemSelectLanguageBinding, position: Int) {
-        binding.item = item
+        binding.item = Constants.supportedLanguagesDisplay[item]
         binding.selectedLanguage = item == selectedLanguage
     }
 }
