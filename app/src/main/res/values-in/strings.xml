@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaipeiTour</string>
+    <string name="action_language">Pilih bahasa</string>
+    <string name="address_title">Alamat</string>
+    <string name="last_updated_title">Waktu terakhir diperbarui</string>
+</resources>

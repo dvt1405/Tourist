@@ -1,4 +1,17 @@
 <resources>
+    <string-array name="language_list">
+        <item>繁體中文</item>
+        <item>English</item>
+        <item>แบบไทย</item>
+        <item>한국</item>
+        <item>한국</item>
+        <item>한국</item>
+        <item>한국</item>
+        <item>VietNam</item>
+    </string-array>
+
     <string name="app_name">TaipeiTour</string>
-    <string name="action_language">Select language\n</string>
+    <string name="action_language">Select language</string>
+    <string name="address_title">Address</string>
+    <string name="last_updated_title">Last updated time</string>
 </resources>

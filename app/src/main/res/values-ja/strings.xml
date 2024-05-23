@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaipeiTour</string>
+    <string name="action_language">言語を選択する</string>
+    <string name="address_title">住所</string>
+    <string name="last_updated_title">最終更新時間</string>
+</resources>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TaipeiTour</string>
+    <string name="action_language">Chọn ngôn ngữ</string>
+    <string name="address_title">Địa chỉ</string>
+    <string name="last_updated_title">Cập nhật</string>
+</resources>

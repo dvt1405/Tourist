@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingVertical="16dp"
-            android:text="Select Language"
+            android:text="@string/action_language"
             android:textAppearance="@style/TextAppearance.AppCompat.Title"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent" />
