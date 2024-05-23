@@ -8,6 +8,7 @@ import com.kt.apps.media.taipeitour.base.BaseFragment
 import com.kt.apps.media.taipeitour.data.models.TourDTO
 import com.kt.apps.media.taipeitour.databinding.FragmentDetailBinding
 import com.kt.apps.media.taipeitour.ui.MainViewModel
+import com.kt.apps.media.taipeitour.ui.webview.WebViewFragment
 import com.kt.apps.media.taipeitour.utils.GlideApp
 
 class DetailFragment : BaseFragment<FragmentDetailBinding>() {
@@ -26,14 +27,28 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
             arguments?.getParcelable<TourDTO>(EXTRA_ITEM) ?: savedInstanceState?.getParcelable(
                 EXTRA_ITEM
             )
-        (activity as? AppCompatActivity)?.setSupportActionBar(binding.appbar.toolbar)
-        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        (activity as? AppCompatActivity)?.supportActionBar?.setDisplayShowHomeEnabled(true)
+        setSupportActionBar(binding.appbar.toolbar)
         binding.appbar.toolbar.setNavigationOnClickListener {
             activity?.onBackPressed()
         }
         binding.item = item
         binding.urlTextView.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .setCustomAnimations(
+                    com.kt.skeleton.R.anim.grow_from_bottom,
+                    com.kt.skeleton.R.anim.fade_out,
+                    0,
+                    com.kt.skeleton.R.anim.shrink_from_top
+                )
+                .replace(
+                    R.id.main,
+                    WebViewFragment.newInstance(
+                        item?.name ?: "",
+                        item?.url ?: ""
+                    )
+                )
+                .addToBackStack(null)
+                .commit()
         }
     }
 
