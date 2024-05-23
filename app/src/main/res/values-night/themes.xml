@@ -3,5 +3,7 @@
     <style name="Base.Theme.TaipeiTour" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Divider color -->
+        <item name="colorOutlineVariant">#12ffffff</item>
     </style>
 </resources>

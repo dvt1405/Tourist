@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.divider.MaterialDividerItemDecoration
 import com.kt.apps.media.taipeitour.Constants
 import com.kt.apps.media.taipeitour.data.settings.LanguageSettings
 import com.kt.apps.media.taipeitour.databinding.FragmentSelectLanguageBinding
@@ -36,6 +37,12 @@ class SelectLanguageFragment() : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
         adapter.selectedLanguage = languageSettings.getLanguage()
         _binding!!.recyclerView.adapter = adapter
+        _binding!!.recyclerView.addItemDecoration(
+            MaterialDividerItemDecoration(
+                requireContext(),
+                MaterialDividerItemDecoration.VERTICAL
+            )
+        )
         adapter.onRefresh(Constants.supportedLanguages)
         adapter.itemClickListener = { item, _ ->
             mainViewModel.onChangeLanguage(item)

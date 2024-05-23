@@ -11,6 +11,7 @@ import com.kt.apps.media.taipeitour.R
 import com.kt.apps.media.taipeitour.base.BaseFragment
 import com.kt.apps.media.taipeitour.databinding.FragmentMainBinding
 import androidx.fragment.app.activityViewModels
+import com.google.android.material.divider.MaterialDividerItemDecoration
 import com.kt.apps.media.taipeitour.ui.detail.DetailFragment
 import com.kt.apps.media.taipeitour.ui.selectlanguage.SelectLanguageFragment
 import com.kt.skeleton.KunSkeleton
@@ -54,6 +55,12 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
                 return true
             }
         }, viewLifecycleOwner)
+        binding.recyclerView.addItemDecoration(
+            MaterialDividerItemDecoration(
+                requireContext(),
+                MaterialDividerItemDecoration.VERTICAL
+            )
+        )
     }
 
 
@@ -62,7 +69,13 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
         adapter.itemClickListener = { item, _ ->
             mainViewModel.getDetailTour(item)
             parentFragmentManager.beginTransaction()
-                .add(R.id.main, DetailFragment.newInstance(item))
+                .setCustomAnimations(
+                    com.kt.skeleton.R.anim.grow_from_bottom,
+                    com.kt.skeleton.R.anim.fade_out,
+                    0,
+                    com.kt.skeleton.R.anim.shrink_from_top
+                )
+                .replace(R.id.main, DetailFragment.newInstance(item))
                 .addToBackStack(DetailFragment::class.java.name)
                 .commit()
         }
