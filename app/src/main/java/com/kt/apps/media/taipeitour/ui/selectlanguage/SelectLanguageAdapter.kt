@@ -11,7 +11,7 @@ class SelectLanguageAdapter() : BaseAdapter<String, ItemSelectLanguageBinding>()
         get() = R.layout.item_select_language
 
     override fun onBindItem(item: String, binding: ItemSelectLanguageBinding, position: Int) {
-        binding.item = Constants.supportedLanguagesDisplay[item]
+        binding.item = "${Constants.supportedLanguagesDisplay[item]} (${item})"
         binding.selectedLanguage = item == selectedLanguage
     }
 }
